@@ -34,7 +34,10 @@
     {"@type":"ListItem","position":3,"item":{"@type":"LodgingBusiness","name":"The Cloud Nest","address":"Khandala"}},
     {"@type":"ListItem","position":4,"item":{"@type":"LodgingBusiness","name":"Pawna Edge Retreat","address":"Pawna Lake, Lonavala"}},
     {"@type":"ListItem","position":5,"item":{"@type":"LodgingBusiness","name":"Stone Pine Cottage","address":"Kune Village, Lonavala"}},
-    {"@type":"ListItem","position":6,"item":{"@type":"LodgingBusiness","name":"Duke's Nose Manor","address":"Khandala"}}
+    {"@type":"ListItem","position":6,"item":{"@type":"LodgingBusiness","name":"Duke's Nose Manor","address":"Khandala"}},
+    {"@type":"ListItem","position":7,"item":{"@type":"LodgingBusiness","name":"Misty Ridge Villa","address":"Tungarli, Lonavala"}},
+    {"@type":"ListItem","position":8,"item":{"@type":"LodgingBusiness","name":"Lakeside Haven","address":"Pawna Lake, Lonavala"}},
+    {"@type":"ListItem","position":9,"item":{"@type":"LodgingBusiness","name":"Green Gable Bungalow","address":"Old Khandala Road, Lonavala"}}
   ]
 }
 </script>
@@ -347,6 +350,31 @@
     .filters{flex-direction:column;align-items:stretch;}
     .filter-reset{margin-left:0;align-self:flex-start;}
   }
+
+  /* ---------- CARD DETAILS ---------- */
+  .villa-art{position:relative;}
+  .rating-badge{position:absolute;top:12px;right:12px;background:var(--surface);color:var(--ink-900);font-size:0.78rem;font-weight:600;padding:5px 10px;border-radius:999px;box-shadow:0 2px 8px rgba(28,42,30,0.14);}
+  .rating-badge small{font-weight:400;color:var(--ink-600);}
+  .chip-list{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
+  .chip-list li{font-size:0.75rem;color:var(--moss-600);background:var(--moss-100);border-radius:999px;padding:4px 10px;}
+  .villa-nearby{font-size:0.78rem;color:var(--ink-600);}
+  .villa-body button.btn{font-size:0.88rem;}
+
+  /* ---------- BOOKING MODAL ---------- */
+  .modal{position:fixed;inset:0;z-index:100;background:rgba(21,32,24,0.55);display:flex;align-items:center;justify-content:center;padding:20px;}
+  .modal[hidden]{display:none;}
+  .modal-card{position:relative;background:var(--surface);border-radius:var(--radius-m);width:100%;max-width:460px;padding:30px 28px 28px;box-shadow:0 30px 60px rgba(0,0,0,0.25);max-height:92vh;overflow:auto;}
+  .modal-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:1.8rem;line-height:1;cursor:pointer;color:var(--ink-600);}
+  .modal-eyebrow{font-size:0.78rem;color:var(--brass-500);margin-bottom:6px;}
+  .modal-card h3{font-size:1.5rem;}
+  .modal-sub{font-size:0.86rem;color:var(--ink-600);margin:4px 0 20px;}
+  .m-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .m-field{display:flex;flex-direction:column;gap:6px;}
+  .m-field label{font-size:0.76rem;color:var(--ink-600);}
+  .m-field input{border:1px solid var(--line);border-radius:var(--radius-s);padding:11px 12px;font-family:'Work Sans',sans-serif;font-size:0.9rem;color:var(--ink-900);background:var(--page-bg);width:100%;}
+  .m-summary{font-size:0.86rem;color:var(--moss-600);font-weight:500;min-height:1.3em;margin-bottom:6px;}
+  .m-error{font-size:0.82rem;color:#B3261E;min-height:1.2em;margin-bottom:10px;}
+  @media (max-width:480px){.m-row{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -382,8 +410,8 @@
       <div class="bento">
         <div class="bento-a">
           <span class="eyebrow">PRIVATE VILLAS · LONAVALA &amp; KHANDALA</span>
-          <h1>Weekends up in the <em>Lonavala</em>, in a house that's entirely yours</h1>
-          <p>Six villas around Lonavala, Khandala and Pawna Lake — private pools, hill views, bonfire decks — booked directly with the family that runs them, over WhatsApp.</p>
+          <h1>Weekends up in the <em>Sahyadris</em>, in a house that's entirely yours</h1>
+          <p>Nine villas around Lonavala, Khandala and Pawna Lake — private pools, hill views, bonfire decks — booked directly with the family that runs them, over WhatsApp.</p>
           <div class="ctas">
             <a href="#villas" class="btn btn-brass">See the villas</a>
             <a class="btn btn-wa js-wa-link" href="#" target="_blank" rel="noopener">
@@ -406,7 +434,7 @@
           </svg>
         </div>
         <div class="bento-c">
-          <b>6</b><span>Villas, each one different</span>
+          <b>9</b><span>Villas, each one different</span>
         </div>
         <div class="bento-d">
           <b>2–16</b><span>Guests per house</span>
@@ -573,7 +601,7 @@
       <div>
         <h4>Talk to us</h4>
         <div class="flist">
-          <a class="js-wa-link" href="#" target="_blank" rel="noopener">WhatsApp: +91 98XXX XXXXX</a>
+          <a class="js-wa-link" href="#" target="_blank" rel="noopener">WhatsApp: +91 78410 14783</a>
           <a href="mailto:stay@lonavalavilla99.example">stay@lonavalavilla99.example</a>
           <span>10 AM – 8 PM, all days</span>
         </div>
@@ -581,10 +609,47 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Lonavala Villa 99.</span>
-      <span>Replace the WhatsApp number in the code before going live.</span>
+      <span>Bookings confirmed on WhatsApp</span>
     </div>
   </div>
 </footer>
+
+<div class="modal" id="bookModal" role="dialog" aria-modal="true" aria-labelledby="bmTitle" hidden>
+  <div class="modal-card">
+    <button type="button" class="modal-close" id="bmClose" aria-label="Close">×</button>
+    <p class="modal-eyebrow">Select your dates</p>
+    <h3 id="bmTitle"></h3>
+    <p class="modal-sub" id="bmSub"></p>
+    <form id="bookForm" novalidate>
+      <div class="m-row">
+        <div class="m-field">
+          <label for="bm-checkin">Check-in</label>
+          <input type="date" id="bm-checkin" required>
+        </div>
+        <div class="m-field">
+          <label for="bm-checkout">Check-out</label>
+          <input type="date" id="bm-checkout" required>
+        </div>
+      </div>
+      <div class="m-row">
+        <div class="m-field">
+          <label for="bm-guests">Guests</label>
+          <input type="number" id="bm-guests" min="1" required>
+        </div>
+        <div class="m-field">
+          <label for="bm-name">Your name (optional)</label>
+          <input type="text" id="bm-name" placeholder="e.g. Ananya Rao">
+        </div>
+      </div>
+      <p class="m-summary" id="bmSummary" aria-live="polite"></p>
+      <p class="m-error" id="bmError" role="alert"></p>
+      <button type="submit" class="btn btn-wa btn-block">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-3.9A8 8 0 1 1 9 18.6L4 20Z"/><path d="M8.5 9.7c0 3.4 2.8 6.2 6.2 6.2"/></svg>
+        Send booking request on WhatsApp
+      </button>
+    </form>
+  </div>
+</div>
 
 <div class="wa-wrap">
   <a class="wa-float js-wa-link" href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
@@ -595,22 +660,37 @@
 </div>
 
 <script>
-  // Replace with the real business WhatsApp number: country code first, no + or spaces.
-  const WHATSAPP_NUMBER = "917038533308";
+  // Business WhatsApp number: country code first, no + or spaces.
+  const WHATSAPP_NUMBER = "917841014783";
 
   const VILLAS = [
-    { name:"Villa Sahyadri Vista", area:"Tungarli", locality:"Tungarli, Lonavala", bhk:4, guests:10, pool:true,
-      amenities:"Private infinity pool · Lake view · Caretaker on site", priceValue:32000 },
-    { name:"Amber Hill House", area:"Old Khandala Road", locality:"Old Khandala Road", bhk:3, guests:8, pool:false,
-      amenities:"Bonfire deck · Valley view · Indoor games room", priceValue:24500 },
-    { name:"The Cloud Nest", area:"Khandala", locality:"Khandala Hill Road", bhk:5, guests:14, pool:true,
-      amenities:"Indoor + outdoor pool · Home theatre · Chef on request", priceValue:46000 },
-    { name:"Pawna Edge Retreat", area:"Pawna Lake", locality:"Near Pawna Lake", bhk:3, guests:8, pool:false,
-      amenities:"Lakeview deck · Bonfire pit · Kayak pickup on request", priceValue:22000 },
-    { name:"Stone Pine Cottage", area:"Kune Village", locality:"Kune Village", bhk:2, guests:6, pool:false,
-      amenities:"Walk to Kune waterfall · Garden · Wood-fired kitchen", priceValue:15500 },
-    { name:"Duke's Nose Manor", area:"Khandala", locality:"Khandala", bhk:6, guests:16, pool:true,
-      amenities:"Party lawn · Two pools · Dedicated event staff", priceValue:58000 }
+    { name:"Villa Sahyadri Vista", area:"Tungarli", locality:"Tungarli, Lonavala", bhk:4, guests:10, maxGuests:12, pool:true,
+      rating:4.8, reviews:64, nearby:"Tungarli Lake 1.2 km · Lion's Point 6 km",
+      amenities:["Private infinity pool","Lake view","Caretaker","Free WiFi","Parking"], priceValue:32000 },
+    { name:"Amber Hill House", area:"Old Khandala Road", locality:"Old Khandala Road", bhk:3, guests:8, maxGuests:10, pool:false,
+      rating:4.6, reviews:41, nearby:"Duke's Nose 4 km · Karla Caves 9 km",
+      amenities:["Bonfire deck","Valley view","Games room","Free WiFi","Parking"], priceValue:24500 },
+    { name:"The Cloud Nest", area:"Khandala", locality:"Khandala Hill Road", bhk:5, guests:14, maxGuests:16, pool:true,
+      rating:4.9, reviews:88, nearby:"Khandala Station 3 km · Tiger's Point 7 km",
+      amenities:["Indoor + outdoor pool","Home theatre","Chef on request","Free WiFi","Power backup"], priceValue:46000 },
+    { name:"Pawna Edge Retreat", area:"Pawna Lake", locality:"Near Pawna Lake", bhk:3, guests:8, maxGuests:10, pool:false,
+      rating:4.5, reviews:37, nearby:"Pawna Lake 800 m · Lohagad Fort 12 km",
+      amenities:["Lakeview deck","Bonfire pit","Kayak pickup","Free WiFi","Parking"], priceValue:22000 },
+    { name:"Stone Pine Cottage", area:"Kune Village", locality:"Kune Village", bhk:2, guests:6, maxGuests:7, pool:false,
+      rating:4.4, reviews:29, nearby:"Kune Waterfall 1 km · Lonavala Market 8 km",
+      amenities:["Garden","Wood-fired kitchen","Waterfall walk","Free WiFi","Caretaker"], priceValue:15500 },
+    { name:"Duke's Nose Manor", area:"Khandala", locality:"Khandala", bhk:6, guests:16, maxGuests:20, pool:true,
+      rating:4.7, reviews:52, nearby:"Duke's Nose 2 km · Khandala Station 4 km",
+      amenities:["Two pools","Party lawn","Event staff","Free WiFi","Parking for 6 cars"], priceValue:58000 },
+    { name:"Misty Ridge Villa", area:"Tungarli", locality:"Tungarli, Lonavala", bhk:3, guests:8, maxGuests:10, pool:true,
+      rating:4.6, reviews:33, nearby:"Tungarli Dam 2 km · Bhushi Dam 5 km",
+      amenities:["Private pool","Hill view","Chef on request","Free WiFi","Caretaker"], priceValue:27500 },
+    { name:"Lakeside Haven", area:"Pawna Lake", locality:"Pawna Lake, Lonavala", bhk:4, guests:10, maxGuests:12, pool:true,
+      rating:4.8, reviews:46, nearby:"Pawna Lake 500 m · Tikona Fort 10 km",
+      amenities:["Private pool","Lake view","Bonfire pit","Free WiFi","Kitchen"], priceValue:34000 },
+    { name:"Green Gable Bungalow", area:"Old Khandala Road", locality:"Old Khandala Road", bhk:2, guests:6, maxGuests:8, pool:false,
+      rating:4.3, reviews:22, nearby:"Lonavala Market 5 km · Rajmachi Point 7 km",
+      amenities:["Large garden","Barbecue","Valley view","Free WiFi","Parking"], priceValue:17500 }
   ];
 
   const ACCENTS = ["#E6EEE0","#F5E7C6","#EFE5D5","#E8F0E2"];
@@ -657,21 +737,22 @@
 
     grid.innerHTML = list.map((v, i) => {
       const priceDisplay = "₹" + v.priceValue.toLocaleString("en-IN");
-      const message = `Hi! I'd like to book ${v.name} in ${v.locality} (${v.bhk} BHK, sleeps ${v.guests}${v.pool ? ", private pool" : ""}) at ${priceDisplay}/night. Could you share availability and confirm the final price?`;
       const large = i % 4 === 0 ? " lg" : "";
+      const chips = v.amenities.map(a => `<li>${a}</li>`).join("");
       return `
         <article class="villa-card${large}">
-          <div class="villa-art">${shapeSVG(i)}</div>
+          <div class="villa-art">${shapeSVG(i)}<span class="rating-badge">★ ${v.rating.toFixed(1)} <small>(${v.reviews})</small></span></div>
           <div class="villa-body">
             <span class="villa-loc">${v.locality}</span>
             <h3>${v.name}</h3>
-            <p class="villa-meta">${v.bhk} BHK · Sleeps ${v.guests}${v.pool ? " · Private pool" : ""}</p>
-            <p class="villa-amenities">${v.amenities}</p>
-            <div class="villa-price-row"><b>${priceDisplay}</b><span>per night</span></div>
-            <a class="btn btn-wa btn-block" target="_blank" rel="noopener" href="${waLink(message)}">
+            <p class="villa-meta">${v.bhk} BHK · Sleeps ${v.guests} (max ${v.maxGuests})${v.pool ? " · Private pool" : ""}</p>
+            <ul class="chip-list">${chips}</ul>
+            <p class="villa-nearby">Nearby: ${v.nearby}</p>
+            <div class="villa-price-row"><b>${priceDisplay}</b><span>per night · taxes extra</span></div>
+            <button type="button" class="btn btn-wa btn-block js-book" data-villa="${v.name}">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-3.9A8 8 0 1 1 9 18.6L4 20Z"/><path d="M8.5 9.7c0 3.4 2.8 6.2 6.2 6.2"/></svg>
-              Book on WhatsApp
-            </a>
+              Book now
+            </button>
           </div>
         </article>
       `;
@@ -713,6 +794,118 @@
   const navLinks = document.getElementById("navLinks");
   hamburger.addEventListener("click", () => navLinks.classList.toggle("open"));
   navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
+
+  // ---------- BOOKING MODAL ----------
+  const modal = document.getElementById("bookModal");
+  const bmForm = document.getElementById("bookForm");
+  const bmTitle = document.getElementById("bmTitle");
+  const bmSub = document.getElementById("bmSub");
+  const bmIn = document.getElementById("bm-checkin");
+  const bmOut = document.getElementById("bm-checkout");
+  const bmGuests = document.getElementById("bm-guests");
+  const bmName = document.getElementById("bm-name");
+  const bmError = document.getElementById("bmError");
+  const bmSummary = document.getElementById("bmSummary");
+  let currentVilla = null;
+  let lastFocus = null;
+
+  function isoDate(d){
+    const z = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
+    return z.toISOString().slice(0, 10);
+  }
+  function addDays(iso, n){
+    const d = new Date(iso + "T00:00:00");
+    d.setDate(d.getDate() + n);
+    return isoDate(d);
+  }
+  function nightsBetween(a, b){
+    return Math.round((new Date(b + "T00:00:00") - new Date(a + "T00:00:00")) / 86400000);
+  }
+  function fmtDate(iso){
+    return new Date(iso + "T00:00:00").toLocaleDateString("en-IN", { weekday:"short", day:"numeric", month:"short", year:"numeric" });
+  }
+
+  function updateSummary(){
+    bmError.textContent = "";
+    if (!currentVilla || !bmIn.value || !bmOut.value){ bmSummary.textContent = ""; return; }
+    const n = nightsBetween(bmIn.value, bmOut.value);
+    if (n < 1){ bmSummary.textContent = ""; return; }
+    const total = n * currentVilla.priceValue;
+    bmSummary.textContent = `${n} night${n > 1 ? "s" : ""} × ₹${currentVilla.priceValue.toLocaleString("en-IN")} = ₹${total.toLocaleString("en-IN")} (estimate, taxes extra)`;
+  }
+
+  function openBooking(name){
+    currentVilla = VILLAS.find(v => v.name === name);
+    if (!currentVilla) return;
+    lastFocus = document.activeElement;
+    const today = isoDate(new Date());
+    bmTitle.textContent = currentVilla.name;
+    bmSub.textContent = `${currentVilla.locality} · ${currentVilla.bhk} BHK · Sleeps ${currentVilla.guests}`;
+    bmIn.min = today;
+    bmIn.value = "";
+    bmOut.min = addDays(today, 1);
+    bmOut.value = "";
+    bmGuests.max = currentVilla.maxGuests;
+    bmGuests.value = Math.min(currentVilla.guests, currentVilla.maxGuests);
+    bmName.value = "";
+    bmError.textContent = "";
+    bmSummary.textContent = "";
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    bmIn.focus();
+  }
+
+  function closeBooking(){
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.getElementById("villaGrid").addEventListener("click", e => {
+    const btn = e.target.closest(".js-book");
+    if (btn) openBooking(btn.dataset.villa);
+  });
+  document.getElementById("bmClose").addEventListener("click", closeBooking);
+  modal.addEventListener("click", e => { if (e.target === modal) closeBooking(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !modal.hidden) closeBooking(); });
+
+  bmIn.addEventListener("change", () => {
+    if (!bmIn.value) return;
+    const minOut = addDays(bmIn.value, 1);
+    bmOut.min = minOut;
+    if (!bmOut.value || bmOut.value < minOut) bmOut.value = minOut;
+    updateSummary();
+  });
+  bmOut.addEventListener("change", updateSummary);
+
+  bmForm.addEventListener("submit", e => {
+    e.preventDefault();
+    const v = currentVilla;
+    if (!v) return;
+    const guests = parseInt(bmGuests.value, 10);
+    if (!bmIn.value || !bmOut.value){ bmError.textContent = "Please select both check-in and check-out dates."; return; }
+    const n = nightsBetween(bmIn.value, bmOut.value);
+    if (n < 1){ bmError.textContent = "Check-out must be at least one day after check-in."; return; }
+    if (!guests || guests < 1){ bmError.textContent = "Please enter the number of guests."; return; }
+    if (guests > v.maxGuests){ bmError.textContent = `This villa allows up to ${v.maxGuests} guests.`; return; }
+
+    const price = "₹" + v.priceValue.toLocaleString("en-IN");
+    const total = "₹" + (n * v.priceValue).toLocaleString("en-IN");
+    const nm = bmName.value.trim();
+    const msg =
+      `Hi! I'd like to book a villa${nm ? " — my name is " + nm : ""}.\n\n` +
+      `Villa: ${v.name}\n` +
+      `Location: ${v.locality}\n` +
+      `Details: ${v.bhk} BHK, sleeps ${v.guests} (max ${v.maxGuests})${v.pool ? ", private pool" : ""}\n` +
+      `Check-in: ${fmtDate(bmIn.value)}\n` +
+      `Check-out: ${fmtDate(bmOut.value)}\n` +
+      `Nights: ${n}\n` +
+      `Guests: ${guests}\n` +
+      `Rate: ${price}/night (estimate ${total}, taxes extra)\n\n` +
+      `Please confirm availability and the final price.`;
+    window.open(waLink(msg), "_blank", "noopener");
+    closeBooking();
+  });
 
   renderVillas(VILLAS);
   setGenericWaLinks();
