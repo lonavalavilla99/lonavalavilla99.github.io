@@ -11,6 +11,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <meta name="robots" content="index, follow">
+<link rel="icon" type="image/jpeg" href="logo/logo.jpg">
+<link rel="apple-touch-icon" href="logo/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -375,15 +377,61 @@
   .m-summary{font-size:0.86rem;color:var(--moss-600);font-weight:500;min-height:1.3em;margin-bottom:6px;}
   .m-error{font-size:0.82rem;color:#B3261E;min-height:1.2em;margin-bottom:10px;}
   @media (max-width:480px){.m-row{grid-template-columns:1fr;}}
+
+  /* ---------- LOGO ---------- */
+  .brand{align-items:center;gap:10px;}
+  .brand .logo{flex:none;display:block;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand .mark{font-style:normal;font-weight:600;font-size:1.22rem;letter-spacing:-0.01em;}
+  .brand .n99{color:var(--brass-500);}
+  .brand .place{font-size:0.6rem;letter-spacing:0.16em;margin-top:3px;color:var(--moss-600);}
+  footer .brand .mark{color:#F0ECDF;}
+  footer .brand .n99{color:#D4A94B;}
+
+  /* ---------- OFFER POPUP ---------- */
+  .offer{position:fixed;inset:0;z-index:110;background:rgba(21,32,24,0.6);display:flex;align-items:center;justify-content:center;padding:20px;animation:offerFade .3s ease;}
+  .offer[hidden]{display:none;}
+  @keyframes offerFade{from{opacity:0;}to{opacity:1;}}
+  @keyframes offerRise{from{opacity:0;transform:translateY(18px) scale(.97);}to{opacity:1;transform:none;}}
+  .offer-card{position:relative;width:100%;max-width:400px;background:var(--surface);border-radius:22px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,0.32);animation:offerRise .38s ease;max-height:94vh;overflow-y:auto;}
+  .offer-close{position:absolute;top:10px;right:12px;z-index:2;width:34px;height:34px;border-radius:50%;border:none;background:rgba(255,255,255,0.14);color:#F0ECDF;font-size:1.5rem;line-height:1;cursor:pointer;}
+  .offer-close:hover{background:rgba(255,255,255,0.26);}
+  .offer-top{background:linear-gradient(160deg,#1E3325,#152018);color:#F0ECDF;text-align:center;padding:30px 24px 26px;}
+  .offer-top .logo{margin:0 auto 12px;}
+  .offer-tag{font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;color:#D4A94B;}
+  .offer-big{font-family:'Fraunces',serif;font-size:1.6rem;margin-top:6px;}
+  .offer-big span{font-size:4.6rem;font-weight:600;color:#D4A94B;line-height:1;margin-right:4px;}
+  .offer-sub{font-size:0.9rem;color:rgba(240,236,223,0.78);margin-top:4px;}
+  .offer-body{padding:24px 26px 22px;text-align:center;}
+  .offer-body h3{font-size:1.25rem;margin-bottom:8px;}
+  .offer-body > p{font-size:0.9rem;color:var(--ink-600);margin-bottom:18px;}
+  .offer-body b{color:var(--brass-500);letter-spacing:0.04em;}
+  .offer-skip{background:none;border:none;color:var(--ink-600);font-size:0.86rem;cursor:pointer;margin-top:12px;text-decoration:underline;font-family:inherit;}
+  .offer-fine{font-size:0.7rem;color:var(--ink-600);margin-top:10px;opacity:0.85;}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="logo-mark" viewBox="0 0 64 64">
+    <clipPath id="logoClip"><rect width="64" height="64" rx="14"/></clipPath>
+    <rect width="64" height="64" rx="14" fill="#152018"/>
+    <g clip-path="url(#logoClip)">
+      <circle cx="47" cy="19" r="6" fill="#D4A94B"/>
+      <path d="M0 52 L16 38 L28 47 L42 33 L64 50 V64 H0Z" fill="#4C6E44"/>
+    </g>
+    <path d="M19 46 V32 L32 21 L45 32 V46 Z" fill="none" stroke="#F0ECDF" stroke-width="3.5" stroke-linejoin="round"/>
+    <rect x="28" y="36" width="8" height="10" fill="#F0ECDF"/>
+  </symbol>
+</svg>
 
 <header class="site-nav">
   <div class="nav-inner">
-    <a href="#top" class="brand">
-      <span class="mark">Lonavala Villa 99</span>
-      <span class="place">LONAVALA</span>
+    <a href="#top" class="brand" aria-label="Lonavala Villa 99 — home">
+      <svg class="logo" width="38" height="38" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <span class="brand-text">
+        <span class="mark">Lonavala Villa <span class="n99">99</span></span>
+        <span class="place">VILLA RENTALS</span>
+      </span>
     </a>
     <nav class="links" id="navLinks">
       <a href="#villas">Villas</a>
@@ -586,7 +634,10 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <div class="brand"><span class="mark">Lonavala Villa 99</span></div>
+        <div class="brand">
+          <svg class="logo" width="38" height="38" aria-hidden="true"><use href="#logo-mark"/></svg>
+          <span class="brand-text"><span class="mark">Lonavala Villa <span class="n99">99</span></span></span>
+        </div>
         <p style="max-width:280px;color:rgba(240,236,223,0.6)">Independently run villas across Lonavala, Khandala and Pawna — booked and managed over WhatsApp.</p>
       </div>
       <div>
@@ -648,6 +699,28 @@
         Send booking request on WhatsApp
       </button>
     </form>
+  </div>
+</div>
+
+<div class="offer" id="offerModal" role="dialog" aria-modal="true" aria-labelledby="offerTitle" hidden>
+  <div class="offer-card">
+    <button type="button" class="offer-close" id="offerClose" aria-label="Close offer">×</button>
+    <div class="offer-top">
+      <svg class="logo" width="44" height="44" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <p class="offer-tag">Season special</p>
+      <div class="offer-big"><span>50%</span> OFF</div>
+      <p class="offer-sub">on your Lonavala villa stay</p>
+    </div>
+    <div class="offer-body">
+      <h3 id="offerTitle">Book this season and save half</h3>
+      <p>Message us on WhatsApp, mention code <b id="offerCode"></b>, and we'll confirm your discounted rate for your dates.</p>
+      <a class="btn btn-wa btn-block" id="offerCta" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-3.9A8 8 0 1 1 9 18.6L4 20Z"/><path d="M8.5 9.7c0 3.4 2.8 6.2 6.2 6.2"/></svg>
+        Claim 50% off on WhatsApp
+      </a>
+      <button type="button" class="offer-skip" id="offerSkip">Maybe later</button>
+      <p class="offer-fine">Offer applies to select dates and villas. Terms apply.</p>
+    </div>
   </div>
 </div>
 
@@ -906,6 +979,32 @@
     window.open(waLink(msg), "_blank", "noopener");
     closeBooking();
   });
+
+  // ---------- SEASON OFFER POPUP (shows 5 seconds after page load) ----------
+  const OFFER_CODE = "SEASON50";
+  const OFFER_DELAY_MS = 5000;
+  const offerModal = document.getElementById("offerModal");
+  document.getElementById("offerCode").textContent = OFFER_CODE;
+  document.getElementById("offerCta").href = waLink(
+    `Hi! I'd like to claim the 50% off season discount (code ${OFFER_CODE}) on a Lonavala villa. Could you share available villas and dates?`
+  );
+
+  function closeOffer(){
+    offerModal.hidden = true;
+    document.body.style.overflow = "";
+  }
+  function showOffer(){
+    if (!modal.hidden){ setTimeout(showOffer, 3000); return; } // don't interrupt an open booking form
+    offerModal.hidden = false;
+    document.body.style.overflow = "hidden";
+    document.getElementById("offerCta").focus();
+  }
+  document.getElementById("offerClose").addEventListener("click", closeOffer);
+  document.getElementById("offerSkip").addEventListener("click", closeOffer);
+  document.getElementById("offerCta").addEventListener("click", closeOffer);
+  offerModal.addEventListener("click", e => { if (e.target === offerModal) closeOffer(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !offerModal.hidden) closeOffer(); });
+  setTimeout(showOffer, OFFER_DELAY_MS);
 
   renderVillas(VILLAS);
   setGenericWaLinks();
