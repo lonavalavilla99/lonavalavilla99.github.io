@@ -722,7 +722,7 @@
     <div class="offer-top">
       <img class="logo" src="logo/logo.jpg" alt="Lonavala Villa 99 logo" width="44" height="44">
       <p class="offer-tag">Season special</p>
-      <div class="offer-big"><span>50%</span> OFF</div>
+      <div class="offer-big"><span>20%</span> OFF</div>
       <p class="offer-sub">on your Lonavala villa stay</p>
     </div>
     <div class="offer-body">
@@ -730,7 +730,7 @@
       <p>Message us on WhatsApp, mention code <b id="offerCode"></b>, and we'll confirm your discounted rate for your dates.</p>
       <a class="btn btn-wa btn-block" id="offerCta" href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-3.9A8 8 0 1 1 9 18.6L4 20Z"/><path d="M8.5 9.7c0 3.4 2.8 6.2 6.2 6.2"/></svg>
-        Claim 50% off on WhatsApp
+        Claim 20% off on WhatsApp
       </a>
       <button type="button" class="offer-skip" id="offerSkip">Maybe later</button>
       <p class="offer-fine">Offer applies to select dates and villas. Terms apply.</p>
@@ -995,12 +995,12 @@
   });
 
   // ---------- SEASON OFFER POPUP (shows 5 seconds after page load) ----------
-  const OFFER_CODE = "SEASON50";
-  const OFFER_DELAY_MS = 5000;
+  const OFFER_CODE = "SEASON20";
+  const OFFER_DELAY_MS = 10000;
   const offerModal = document.getElementById("offerModal");
   document.getElementById("offerCode").textContent = OFFER_CODE;
   document.getElementById("offerCta").href = waLink(
-    `Hi! I'd like to claim the 50% off season discount (code ${OFFER_CODE}) on a Lonavala villa. Could you share available villas and dates?`
+    `Hi! I'd like to claim the 20% off season discount (code ${OFFER_CODE}) on a Lonavala villa. Could you share available villas and dates?`
   );
 
   function closeOffer(){
