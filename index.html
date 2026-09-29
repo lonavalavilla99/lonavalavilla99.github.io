@@ -11,6 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_IN">
 <meta name="robots" content="index, follow">
+<!-- FAVICON: using the same file as the logo. Point this elsewhere if you have a separate favicon. -->
 <link rel="icon" type="image/jpeg" href="logo/logo.jpg">
 <link rel="apple-touch-icon" href="logo/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -380,7 +381,8 @@
 
   /* ---------- LOGO ---------- */
   .brand{align-items:center;gap:10px;}
-  .brand .logo{flex:none;display:block;}
+  .brand .logo{flex:none;display:block;object-fit:contain;border-radius:10px;}
+  .offer-top .logo{object-fit:contain;border-radius:10px;}
   .brand-text{display:flex;flex-direction:column;line-height:1.1;}
   .brand .mark{font-style:normal;font-weight:600;font-size:1.22rem;letter-spacing:-0.01em;}
   .brand .n99{color:var(--brass-500);}
@@ -408,26 +410,27 @@
   .offer-body b{color:var(--brass-500);letter-spacing:0.04em;}
   .offer-skip{background:none;border:none;color:var(--ink-600);font-size:0.86rem;cursor:pointer;margin-top:12px;text-decoration:underline;font-family:inherit;}
   .offer-fine{font-size:0.7rem;color:var(--ink-600);margin-top:10px;opacity:0.85;}
+
+  /* ---------- SOCIAL ICONS ---------- */
+  .social-icons{display:flex;gap:8px;margin-right:6px;}
+  .social-icons a{
+    width:34px;height:34px;border-radius:50%;
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--ink-900);
+    transition:background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .social-icons svg{width:16px;height:16px;}
+  .social-icons a:hover{background:var(--moss-600);color:#fff;border-color:var(--moss-600);transform:translateY(-1px);}
+  @media (max-width:720px){.social-icons{display:none;}}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="logo-mark" viewBox="0 0 64 64">
-    <clipPath id="logoClip"><rect width="64" height="64" rx="14"/></clipPath>
-    <rect width="64" height="64" rx="14" fill="#152018"/>
-    <g clip-path="url(#logoClip)">
-      <circle cx="47" cy="19" r="6" fill="#D4A94B"/>
-      <path d="M0 52 L16 38 L28 47 L42 33 L64 50 V64 H0Z" fill="#4C6E44"/>
-    </g>
-    <path d="M19 46 V32 L32 21 L45 32 V46 Z" fill="none" stroke="#F0ECDF" stroke-width="3.5" stroke-linejoin="round"/>
-    <rect x="28" y="36" width="8" height="10" fill="#F0ECDF"/>
-  </symbol>
-</svg>
-
 <header class="site-nav">
   <div class="nav-inner">
+    <!-- LOGO: file at logo/logo.jpg (used in nav, footer, popup) -->
     <a href="#top" class="brand" aria-label="Lonavala Villa 99 — home">
-      <svg class="logo" width="38" height="38" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <img class="logo" src="logo/logo.jpg" alt="Lonavala Villa 99 logo" width="38" height="38">
       <span class="brand-text">
         <span class="mark">Lonavala Villa <span class="n99">99</span></span>
         <span class="place">VILLA RENTALS</span>
@@ -440,6 +443,17 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
+      <div class="social-icons">
+        <a href="https://www.instagram.com/lonavalavilla99" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@Lonavalavilla99" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5 15 12 10 14.5Z" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/Lonavalavillas" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.6c-.9 0-1.4.5-1.4 1.4V11h3l-.4 2.6h-2.6V20h-2.8v-6.4H8V11h1.2V9.5c0-2 1.2-3.5 3.4-3.5H14Z" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
       <a href="#villas" class="btn btn-outline">View villas</a>
       <a class="btn btn-wa js-wa-link" href="#" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-3.9A8 8 0 1 1 9 18.6L4 20Z"/><path d="M8.5 9.7c0 3.4 2.8 6.2 6.2 6.2"/></svg>
@@ -635,7 +649,7 @@
     <div class="footer-grid">
       <div>
         <div class="brand">
-          <svg class="logo" width="38" height="38" aria-hidden="true"><use href="#logo-mark"/></svg>
+          <img class="logo" src="logo/logo.jpg" alt="Lonavala Villa 99 logo" width="38" height="38">
           <span class="brand-text"><span class="mark">Lonavala Villa <span class="n99">99</span></span></span>
         </div>
         <p style="max-width:280px;color:rgba(240,236,223,0.6)">Independently run villas across Lonavala, Khandala and Pawna — booked and managed over WhatsApp.</p>
@@ -706,7 +720,7 @@
   <div class="offer-card">
     <button type="button" class="offer-close" id="offerClose" aria-label="Close offer">×</button>
     <div class="offer-top">
-      <svg class="logo" width="44" height="44" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <img class="logo" src="logo/logo.jpg" alt="Lonavala Villa 99 logo" width="44" height="44">
       <p class="offer-tag">Season special</p>
       <div class="offer-big"><span>50%</span> OFF</div>
       <p class="offer-sub">on your Lonavala villa stay</p>
