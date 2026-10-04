@@ -24,7 +24,7 @@
   "name": "Lonavala Villa 99",
   "description": "Private villas for rent in Lonavala across Tungarli, Old Khandala Road, Pawna Lake and Kune Village, booked directly on WhatsApp.",
   "areaServed": "Lonavala, Maharashtra, India",
-  "priceRange": "₹15,500 - ₹58,000 per night"
+  "priceRange": "₹5,000 - ₹58,000 per night"
 }
 </script>
 <script type="application/ld+json">
@@ -49,12 +49,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"How much does it cost to rent a villa in Lonavala?","acceptedAnswer":{"@type":"Answer","text":"Villas in Lonavala typically rent for ₹15,000 to ₹60,000 per night depending on the area, number of bedrooms and whether the villa has a private pool. Smaller 2-3 BHK cottages near Kune or Pawna are cheaper, while larger pool villas near Tungarli or Khandala cost more."}},
+    {"@type":"Question","name":"How much does it cost to rent a villa in Lonavala?","acceptedAnswer":{"@type":"Answer","text":"Villas in Lonavala start from around ₹5,000 per night and go up to ₹60,000 depending on the area, number of bedrooms and whether the villa has a private pool. Smaller cottages are cheaper, while larger pool villas near Tungarli or Khandala cost more."}},
     {"@type":"Question","name":"Which is the best area to rent a villa in Lonavala?","acceptedAnswer":{"@type":"Answer","text":"Tungarli is popular for lake and hill views close to the main town, Old Khandala Road suits groups wanting quiet and greenery, and Pawna Lake is best for a lakeside, camping-adjacent stay."}},
     {"@type":"Question","name":"Do Lonavala villas have a private swimming pool?","acceptedAnswer":{"@type":"Answer","text":"Some do and some don't — it varies by villa. Filter by 'Private pool only' on this page to see only the villas with their own pool."}},
     {"@type":"Question","name":"How far is Lonavala from Mumbai and Pune?","acceptedAnswer":{"@type":"Answer","text":"Lonavala is about 90 km from Mumbai (roughly 2 hours by road) and about 65 km from Pune (around 1.5 hours), making it a popular weekend hill station for both cities."}},
     {"@type":"Question","name":"How do I book a villa on this site?","acceptedAnswer":{"@type":"Answer","text":"Pick a villa, filter by area, price, BHK or pool if needed, then tap 'Book on WhatsApp'. This opens a WhatsApp chat pre-filled with that villa's details so you can confirm dates directly with the host."}},
-    {"@type":"Question","name":"What happens after I make the payment?","acceptedAnswer":{"@type":"Answer","text":"Once you've paid, send us a photo or screenshot of the payment on WhatsApp and we'll confirm your booking right away."}}
+    {"@type":"Question","name":"What happens after I make the payment?","acceptedAnswer":{"@type":"Answer","text":"After you make the payment, you'll get a booking confirmation on WhatsApp — including guest details, villa details and staff details — for smooth coordination during your stay."}}
   ]
 }
 </script>
@@ -146,7 +146,67 @@
   .section-head h2{font-size:clamp(1.7rem, 3.2vw, 2.35rem);}
   .section-tag{color:var(--ink-600);font-size:0.9rem;max-width:400px;}
 
-  /* ---------- BENTO HERO ---------- */
+  /* ---------- PHOTO HERO ---------- */
+  .hero-photo{
+    position:relative;
+    min-height:560px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    overflow:hidden;
+    color:#fff;
+    padding:76px 0 86px;
+  }
+  .hero-photo-bg{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,#EFCE8C 0%,#E2A05C 32%,#4A3522 75%,#1C150E 100%);
+  }
+  .hero-photo-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .hero-photo-overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,16,12,0.18) 0%, rgba(10,16,12,0.12) 38%, rgba(10,16,12,0.72) 100%);
+  }
+  .hero-photo-content{position:relative;z-index:2;}
+  .hero-photo-eyebrow{font-size:0.8rem;letter-spacing:0.12em;color:#F0D28A;margin-bottom:16px;}
+  .hero-photo-title{
+    font-family:'Fraunces', serif;font-weight:500;
+    font-size:clamp(2.2rem, 6vw, 3.6rem);line-height:1.12;
+    text-shadow:0 2px 20px rgba(0,0,0,0.3);margin-bottom:14px;
+  }
+  .hero-photo-title em{font-style:italic;color:#F0D28A;font-weight:400;}
+  .hero-photo-sub{font-size:1.02rem;color:rgba(255,255,255,0.88);max-width:440px;margin-bottom:28px;text-shadow:0 1px 12px rgba(0,0,0,0.25);}
+  .hero-photo-cta{display:inline-flex;}
+  .hero-search{position:relative;z-index:3;margin-top:36px;}
+  .hero-search-bar{
+    background:#fff;border-radius:999px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.28);
+    padding:9px 10px 9px 22px;
+    display:flex;align-items:center;gap:10px;
+    max-width:560px;
+  }
+  .hero-search-bar svg{width:18px;height:18px;color:var(--ink-600);flex:none;}
+  .hero-search-bar input{
+    border:none;outline:none;flex:1;background:transparent;
+    font-family:'Work Sans', sans-serif;font-size:0.95rem;color:var(--ink-900);padding:11px 0;
+  }
+  .hero-search-bar input::placeholder{color:var(--ink-600);}
+  @media (max-width:720px){
+    .hero-photo{min-height:460px;padding:70px 0 54px;}
+    .hero-search{margin-top:24px;}
+  }
+
+  /* ---------- QUICK STATS STRIP ---------- */
+  .info-strip{background:var(--surface);border-bottom:1px solid var(--line);}
+  .info-strip-inner{display:flex;flex-wrap:wrap;}
+  .info-item{flex:1 1 170px;padding:22px 24px;border-right:1px solid var(--line);}
+  .info-item:last-child{border-right:none;}
+  .info-item b{font-family:'Fraunces', serif;font-size:1.5rem;font-weight:500;color:var(--brass-500);display:block;}
+  .info-item span{font-size:0.8rem;color:var(--ink-600);}
+  @media (max-width:720px){
+    .info-item{flex:1 1 50%;border-right:none;border-bottom:1px solid var(--line);}
+  }
+
+  /* ---------- BENTO (legacy, unused by current hero) ---------- */
   .hero{padding-top:44px;padding-bottom:20px;}
   .bento{
     display:grid;
@@ -323,11 +383,9 @@
     height:56px;
     flex:1 1 150px;
     max-width:200px;
-    filter:grayscale(100%);
-    opacity:0.65;
-    transition:opacity .2s ease, filter .2s ease;
+    transition:transform .2s ease;
   }
-  .partner-logo:hover{filter:grayscale(0%);opacity:1;}
+  .partner-logo:hover{transform:translateY(-2px);}
   .partner-logo img{max-height:34px;max-width:100%;object-fit:contain;display:block;}
   .partner-logo .fallback-text{
     font-family:'Fraunces', serif;
@@ -498,16 +556,14 @@
   .offer-fine{font-size:0.7rem;color:var(--ink-600);margin-top:10px;opacity:0.85;}
 
   /* ---------- SOCIAL ICONS ---------- */
-  .social-icons{display:flex;gap:8px;margin-right:6px;}
+  .social-icons{display:flex;gap:9px;margin-right:6px;}
   .social-icons a{
-    width:34px;height:34px;border-radius:50%;
-    border:1px solid var(--line);
+    width:30px;height:30px;border-radius:50%;overflow:hidden;
     display:flex;align-items:center;justify-content:center;
-    color:var(--ink-900);
-    transition:background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+    transition:transform .15s ease;
   }
-  .social-icons svg{width:16px;height:16px;}
-  .social-icons a:hover{background:var(--moss-600);color:#fff;border-color:var(--moss-600);transform:translateY(-1px);}
+  .social-icons svg{width:100%;height:100%;display:block;}
+  .social-icons a:hover{transform:translateY(-1px);}
   @media (max-width:720px){.social-icons{display:none;}}
 </style>
 </head>
@@ -532,13 +588,27 @@
     <div class="nav-cta">
       <div class="social-icons">
         <a href="https://www.instagram.com/lonavalavilla99" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          <svg viewBox="0 0 48 48">
+            <defs><linearGradient id="igGradNav" x1="0" y1="48" x2="48" y2="0">
+              <stop offset="0%" stop-color="#FFDC80"/><stop offset="25%" stop-color="#FCAF45"/><stop offset="50%" stop-color="#E1306C"/><stop offset="75%" stop-color="#C13584"/><stop offset="100%" stop-color="#833AB4"/>
+            </linearGradient></defs>
+            <rect width="48" height="48" rx="12" fill="url(#igGradNav)"/>
+            <rect x="13" y="13" width="22" height="22" rx="7" fill="none" stroke="#fff" stroke-width="2.4"/>
+            <circle cx="24" cy="24" r="6" fill="none" stroke="#fff" stroke-width="2.4"/>
+            <circle cx="32.5" cy="15.5" r="1.8" fill="#fff"/>
+          </svg>
         </a>
         <a href="https://www.youtube.com/@Lonavalavilla99" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.5 15 12 10 14.5Z" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 48 48">
+            <rect width="48" height="48" rx="12" fill="#FF0000"/>
+            <path d="M19 17.5 32 24 19 30.5Z" fill="#fff"/>
+          </svg>
         </a>
         <a href="https://www.facebook.com/share/1CdGbVf8nM/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Follow us on Facebook">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M14 8.5h-1.6c-.9 0-1.4.5-1.4 1.4V11h3l-.4 2.6h-2.6V20h-2.8v-6.4H8V11h1.2V9.5c0-2 1.2-3.5 3.4-3.5H14Z" fill="currentColor" stroke="none"/></svg>
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="24" fill="#1877F2"/>
+            <path d="M27 16h3.6V10.7h-3.9c-4 0-6.2 2.4-6.2 6.5v3.3h-3.6v5.6h3.6V38h5.6V26.1h3.9l.6-5.6h-4.5v-2.8c0-1.3.3-1.7 1.9-1.7Z" fill="#fff"/>
+          </svg>
         </a>
       </div>
       <a href="#villas" class="btn btn-outline">View villas</a>
@@ -553,89 +623,37 @@
 
 <main id="top">
   <!-- ================= BENTO HERO ================= -->
-  <section class="hero">
-    <div class="wrap">
-      <p class="sr-only">Villas in Lonavala for rent — private pool villas near Tungarli, Old Khandala Road, Pawna Lake and Kune Village, bookable directly on WhatsApp.</p>
-      <div class="bento">
-        <div class="bento-a">
-          <span class="eyebrow">PRIVATE VILLAS · LONAVALA &amp; KHANDALA</span>
-          <h1>Weekends up in the <em>Sahyadris</em>, in a house that's entirely yours</h1>
-          <p>Nine villas around Lonavala, Khandala and Pawna Lake — private pools, hill views, bonfire decks — booked directly with the family that runs them, over WhatsApp.</p>
-          <div class="ctas">
-            <a href="#villas" class="btn btn-brass">See the villas</a>
-            <a class="btn btn-wa js-wa-link" href="#" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-3.9A8 8 0 1 1 9 18.6L4 20Z"/><path d="M8.5 9.7c0 3.4 2.8 6.2 6.2 6.2"/></svg>
-              Chat with us
-            </a>
-          </div>
-        </div>
-        <div class="bento-b" aria-hidden="true">
-          <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMax slice">
-            <circle cx="330" cy="55" r="26" fill="#F0D28A"/>
-            <path d="M0 150 L60 100 L120 140 L190 70 L260 145 L330 95 L400 130 L400 220 L0 220 Z" fill="#CBDBC1"/>
-            <path d="M0 175 L80 130 L150 170 L220 115 L300 175 L400 145 L400 220 L0 220 Z" fill="#A9C298"/>
-            <path d="M0 200 L100 175 L200 205 L300 175 L400 200 L400 220 L0 220 Z" fill="#7D9A6C"/>
-            <g transform="translate(190,140)" stroke="#2A3A24" stroke-width="2" fill="none">
-              <path d="M0 45 L0 22 L34 4 L68 22 L68 45 Z"/>
-              <rect x="10" y="30" width="12" height="15"/>
-              <rect x="44" y="30" width="14" height="9"/>
-            </g>
-          </svg>
-        </div>
-        <div class="bento-c">
-          <b>9</b><span>Villas, each one different</span>
-        </div>
-        <div class="bento-d">
-          <b>2–16</b><span>Guests per house</span>
-        </div>
-        <div class="bento-e">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 20Z"/></svg>
-          <div><strong>Book on WhatsApp</strong><span>Real reply from a real caretaker, usually under 30 minutes</span></div>
-        </div>
-        <div class="bento-f">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <div><strong>90 km from Mumbai</strong><span>About 65 km from Pune, on the Sahyadri hill road</span></div>
-        </div>
+  <!-- ================= PHOTO HERO ================= -->
+  <section class="hero-photo">
+    <p class="sr-only">Villas in Lonavala for rent — private pool villas near Tungarli, Old Khandala Road, Pawna Lake and Kune Village, bookable directly on WhatsApp.</p>
+    <!-- HERO IMAGE: change src below to your own photo (e.g. hero/hero-bg.jpg). The gradient behind it is the fallback if the file is missing. -->
+    <div class="hero-photo-bg">
+      <img src="hero/hero-bg.jpg" alt="" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-photo-overlay" aria-hidden="true"></div>
+    <div class="hero-photo-content wrap">
+      <p class="hero-photo-eyebrow">PRIVATE VILLAS · LONAVALA &amp; KHANDALA</p>
+      <h1 class="hero-photo-title">Your Lonavala <em>weekend</em><br>starts here</h1>
+      <p class="hero-photo-sub">Nine villas, private pools, hill views — booked directly on WhatsApp.</p>
+      <a href="#villas" class="btn btn-brass hero-photo-cta">View villas <span aria-hidden="true">&rsaquo;</span></a>
+    </div>
+    <div class="hero-search wrap">
+      <div class="hero-search-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="heroSearch" placeholder="Search by area, villa name…" aria-label="Search villas">
       </div>
     </div>
   </section>
 
-  <!-- ================= PROMO TICKER ================= -->
-  <div class="ticker" aria-label="Seasonal offer">
-    <div class="ticker-track" id="tickerTrack"></div>
+  <!-- ================= QUICK STATS ================= -->
+  <div class="info-strip">
+    <div class="wrap info-strip-inner">
+      <div class="info-item"><b>9</b><span>Villas, each one different</span></div>
+      <div class="info-item"><b>2–16</b><span>Guests per house</span></div>
+      <div class="info-item"><b>₹5,000+</b><span>Per night, starting price</span></div>
+      <div class="info-item"><b>90 km</b><span>From Mumbai · 65 km from Pune</span></div>
+    </div>
   </div>
-
-  <!-- ================= PARTNERS ================= -->
-  <section class="partners" id="partners">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Also listed with our partners</h2>
-        <p class="section-tag">Find Lonavala Villa 99 properties on these platforms too, or book direct on WhatsApp for the best rate.</p>
-      </div>
-      <div class="partner-row">
-        <div class="partner-logo">
-          <img src="partners/airbnb.png" alt="Airbnb" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-          <span class="fallback-text" style="display:none;">Airbnb</span>
-        </div>
-        <div class="partner-logo">
-          <img src="partners/booking.png" alt="Booking.com" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-          <span class="fallback-text" style="display:none;">Booking.com</span>
-        </div>
-        <div class="partner-logo">
-          <img src="partners/agoda.png" alt="Agoda" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-          <span class="fallback-text" style="display:none;">Agoda</span>
-        </div>
-        <div class="partner-logo">
-          <img src="partners/google.png" alt="Google" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-          <span class="fallback-text" style="display:none;">Google</span>
-        </div>
-        <div class="partner-logo">
-          <img src="partners/makemytrip.png" alt="MakeMyTrip" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-          <span class="fallback-text" style="display:none;">MakeMyTrip</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ================= VILLAS + FILTERS ================= -->
   <section id="villas">
@@ -745,7 +763,7 @@
       <div class="faq-list">
         <details class="faq-item" open>
           <summary>How much does it cost to rent a villa in Lonavala?<span class="plus">+</span></summary>
-          <p>Villas here typically run ₹15,000 to ₹60,000 per night depending on the area, bedroom count and whether there's a private pool. Smaller 2–3 BHK cottages near Kune or Pawna sit at the lower end; larger pool villas near Tungarli or Khandala cost more.</p>
+          <p>Villas here start from around ₹5,000 per night and go up to ₹60,000, depending on the area, bedroom count and whether there's a private pool. Smaller cottages sit at the lower end; larger pool villas near Tungarli or Khandala cost more.</p>
         </details>
         <details class="faq-item">
           <summary>Which area should I pick for a villa stay?<span class="plus">+</span></summary>
@@ -765,7 +783,7 @@
         </details>
         <details class="faq-item">
           <summary>What happens after I make the payment?<span class="plus">+</span></summary>
-          <p>Once you've paid, send us a photo or screenshot of the payment on WhatsApp and we'll confirm your booking right away.</p>
+          <p>After you make the payment, you'll get a booking confirmation on WhatsApp — including guest details, villa details and staff details — for smooth coordination during your stay.</p>
         </details>
       </div>
     </div>
@@ -825,6 +843,44 @@
       </form>
     </div>
   </section>
+
+  <!-- ================= PROMO TICKER ================= -->
+  <div class="ticker" aria-label="Seasonal offer">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+
+  <!-- ================= PARTNERS ================= -->
+  <section class="partners" id="partners">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Also listed with our partners</h2>
+        <p class="section-tag">Find Lonavala Villa 99 properties on these platforms too, or book direct on WhatsApp for the best rate.</p>
+      </div>
+      <div class="partner-row">
+        <div class="partner-logo">
+          <img src="partners/airbnb.png" alt="Airbnb" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-text" style="display:none;">Airbnb</span>
+        </div>
+        <div class="partner-logo">
+          <img src="partners/booking.png" alt="Booking.com" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-text" style="display:none;">Booking.com</span>
+        </div>
+        <div class="partner-logo">
+          <img src="partners/agoda.png" alt="Agoda" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-text" style="display:none;">Agoda</span>
+        </div>
+        <div class="partner-logo">
+          <img src="partners/google.png" alt="Google" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-text" style="display:none;">Google</span>
+        </div>
+        <div class="partner-logo">
+          <img src="partners/makemytrip.png" alt="MakeMyTrip" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+          <span class="fallback-text" style="display:none;">MakeMyTrip</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer id="contact">
@@ -934,51 +990,34 @@
   const WHATSAPP_NUMBER = "917841014783";
 
   const VILLAS = [
-    { slug:"villa-1", name:"Villa Sahyadri Vista", area:"Tungarli", locality:"Tungarli, Lonavala", bhk:4, guests:10, maxGuests:12, pool:true,
+    { slug:"villa-sahyadri-vista", name:"Villa Sahyadri Vista", area:"Tungarli", locality:"Tungarli, Lonavala", bhk:4, guests:10, maxGuests:12, pool:true,
       rating:4.8, reviews:64, nearby:"Tungarli Lake 1.2 km · Lion's Point 6 km",
       amenities:["Private infinity pool","Lake view","Caretaker","Free WiFi","Parking"], priceValue:32000 },
-    { slug:"villa-2", name:"Amber Hill House", area:"Old Khandala Road", locality:"Old Khandala Road", bhk:3, guests:8, maxGuests:10, pool:false,
+    { slug:"amber-hill-house", name:"Amber Hill House", area:"Old Khandala Road", locality:"Old Khandala Road", bhk:3, guests:8, maxGuests:10, pool:false,
       rating:4.6, reviews:41, nearby:"Duke's Nose 4 km · Karla Caves 9 km",
       amenities:["Bonfire deck","Valley view","Games room","Free WiFi","Parking"], priceValue:24500 },
-    { slug:"villa-3", name:"The Cloud Nest", area:"Khandala", locality:"Khandala Hill Road", bhk:5, guests:14, maxGuests:16, pool:true,
+    { slug:"the-cloud-nest", name:"The Cloud Nest", area:"Khandala", locality:"Khandala Hill Road", bhk:5, guests:14, maxGuests:16, pool:true,
       rating:4.9, reviews:88, nearby:"Khandala Station 3 km · Tiger's Point 7 km",
       amenities:["Indoor + outdoor pool","Home theatre","Chef on request","Free WiFi","Power backup"], priceValue:46000 },
-    { slug:"villa-4", name:"Pawna Edge Retreat", area:"Pawna Lake", locality:"Near Pawna Lake", bhk:3, guests:8, maxGuests:10, pool:false,
+    { slug:"pawna-edge-retreat", name:"Pawna Edge Retreat", area:"Pawna Lake", locality:"Near Pawna Lake", bhk:3, guests:8, maxGuests:10, pool:false,
       rating:4.5, reviews:37, nearby:"Pawna Lake 800 m · Lohagad Fort 12 km",
       amenities:["Lakeview deck","Bonfire pit","Kayak pickup","Free WiFi","Parking"], priceValue:22000 },
-    { slug:"villa-5", name:"Stone Pine Cottage", area:"Kune Village", locality:"Kune Village", bhk:2, guests:6, maxGuests:7, pool:false,
+    { slug:"stone-pine-cottage", name:"Stone Pine Cottage", area:"Kune Village", locality:"Kune Village", bhk:2, guests:6, maxGuests:7, pool:false,
       rating:4.4, reviews:29, nearby:"Kune Waterfall 1 km · Lonavala Market 8 km",
       amenities:["Garden","Wood-fired kitchen","Waterfall walk","Free WiFi","Caretaker"], priceValue:15500 },
-    { slug:"villa-6", name:"Duke's Nose Manor", area:"Khandala", locality:"Khandala", bhk:6, guests:16, maxGuests:20, pool:true,
+    { slug:"dukes-nose-manor", name:"Duke's Nose Manor", area:"Khandala", locality:"Khandala", bhk:6, guests:16, maxGuests:20, pool:true,
       rating:4.7, reviews:52, nearby:"Duke's Nose 2 km · Khandala Station 4 km",
       amenities:["Two pools","Party lawn","Event staff","Free WiFi","Parking for 6 cars"], priceValue:58000 },
-    { slug:"villa-7", name:"Misty Ridge Villa", area:"Tungarli", locality:"Tungarli, Lonavala", bhk:3, guests:8, maxGuests:10, pool:true,
+    { slug:"misty-ridge-villa", name:"Misty Ridge Villa", area:"Tungarli", locality:"Tungarli, Lonavala", bhk:3, guests:8, maxGuests:10, pool:true,
       rating:4.6, reviews:33, nearby:"Tungarli Dam 2 km · Bhushi Dam 5 km",
       amenities:["Private pool","Hill view","Chef on request","Free WiFi","Caretaker"], priceValue:27500 },
-    { slug:"villa-8", name:"Lakeside Haven", area:"Pawna Lake", locality:"Pawna Lake, Lonavala", bhk:4, guests:10, maxGuests:12, pool:true,
+    { slug:"lakeside-haven", name:"Lakeside Haven", area:"Pawna Lake", locality:"Pawna Lake, Lonavala", bhk:4, guests:10, maxGuests:12, pool:true,
       rating:4.8, reviews:46, nearby:"Pawna Lake 500 m · Tikona Fort 10 km",
       amenities:["Private pool","Lake view","Bonfire pit","Free WiFi","Kitchen"], priceValue:34000 },
-    { slug:"villa-9", name:"Green Gable Bungalow", area:"Old Khandala Road", locality:"Old Khandala Road", bhk:2, guests:6, maxGuests:8, pool:false,
+    { slug:"green-gable-bungalow", name:"Green Gable Bungalow", area:"Old Khandala Road", locality:"Old Khandala Road", bhk:2, guests:6, maxGuests:8, pool:false,
       rating:4.3, reviews:22, nearby:"Lonavala Market 5 km · Rajmachi Point 7 km",
       amenities:["Large garden","Barbecue","Valley view","Free WiFi","Parking"], priceValue:17500 }
   ];
-
-  const ACCENTS = ["#E6EEE0","#F5E7C6","#EFE5D5","#E8F0E2"];
-  const LINE = "#2A3A24";
-
-  function shapeSVG(index){
-    const bg = ACCENTS[index % ACCENTS.length];
-    const shapes = [
-      `<path d="M20 68 L20 46 L50 26 L80 46 L80 68 Z"/><rect x="34" y="52" width="14" height="16"/><rect x="56" y="52" width="14" height="10"/>`,
-      `<path d="M14 66 L14 48 L45 30 L45 48 L76 48 L76 66 Z"/><rect x="24" y="52" width="12" height="14"/><circle cx="80" cy="30" r="6" opacity="0.5"/>`,
-      `<path d="M18 68 L18 50 L50 20 L82 50 L82 68 Z"/><path d="M18 50 H82" opacity="0.6"/><rect x="38" y="54" width="16" height="14"/>`
-    ];
-    const shape = shapes[index % shapes.length];
-    return `<svg viewBox="0 0 100 84" preserveAspectRatio="xMidYMax meet" style="background:${bg}">
-      <path d="M0 84 L0 72 100 72 100 84 Z" fill="#00000010"/>
-      <g fill="none" stroke="${LINE}" stroke-width="1.7" stroke-linejoin="round">${shape}</g>
-    </svg>`;
-  }
 
   function waLink(message){
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
@@ -1008,15 +1047,14 @@
     grid.innerHTML = list.map((v, i) => {
       const priceDisplay = "₹" + v.priceValue.toLocaleString("en-IN");
       const chips = v.amenities.map(a => `<li>${a}</li>`).join("");
-      const photoSlides = [1,2,3].map(n =>
-        `<img class="slide" src="villas/${v.slug}/${n}.jpg" alt="${v.name} photo ${n}" loading="lazy" onerror="handleSlideError(this)">`
+      const photoSlides = [1,2,3].map((n, idx) =>
+        `<img class="slide${idx === 0 ? " active" : ""}" src="villas/${v.slug}/${v.slug}-${n}.jpg" alt="${v.name} photo ${n}" loading="lazy" onerror="handleSlideError(this)">`
       ).join("");
-      const dots = [0,1,2,3].map(d => `<button type="button" class="dot${d===0 ? " active" : ""}" data-dot="${d}" aria-label="Show photo ${d+1}"></button>`).join("");
+      const dots = [0,1,2].map(d => `<button type="button" class="dot${d===0 ? " active" : ""}" data-dot="${d}" aria-label="Show photo ${d+1}"></button>`).join("");
       return `
         <article class="villa-card">
           <div class="villa-art">
             <div class="villa-slider" data-current="0">
-              <div class="slide active">${shapeSVG(i)}</div>
               ${photoSlides}
             </div>
             <div class="slider-dots">${dots}</div>
@@ -1047,15 +1085,29 @@
     const price = document.getElementById("f-price").value;
     const bhk = document.getElementById("f-bhk").value;
     const poolOnly = document.getElementById("f-pool").checked;
+    const search = (document.getElementById("heroSearch").value || "").trim().toLowerCase();
 
     const filtered = VILLAS.filter(v =>
       (area === "all" || v.area === area) &&
       (bhk === "all" || String(v.bhk) === bhk) &&
       (!poolOnly || v.pool) &&
-      priceBucketMatch(v.priceValue, price)
+      priceBucketMatch(v.priceValue, price) &&
+      (!search ||
+        v.name.toLowerCase().includes(search) ||
+        v.locality.toLowerCase().includes(search) ||
+        v.area.toLowerCase().includes(search))
     );
     renderVillas(filtered);
   }
+
+  const heroSearch = document.getElementById("heroSearch");
+  heroSearch.addEventListener("input", applyFilters);
+  heroSearch.addEventListener("keydown", e => {
+    if (e.key === "Enter"){
+      e.preventDefault();
+      document.getElementById("villas").scrollIntoView({ behavior: "smooth" });
+    }
+  });
 
   function setGenericWaLinks(){
     document.querySelectorAll(".js-wa-link").forEach(el => {
@@ -1070,6 +1122,7 @@
     document.getElementById("f-price").value = "all";
     document.getElementById("f-bhk").value = "all";
     document.getElementById("f-pool").checked = false;
+    heroSearch.value = "";
     applyFilters();
   });
 
@@ -1088,9 +1141,11 @@
   })();
 
   // ---------- VILLA IMAGE SLIDER ----------
-  // Each villa gets slide 0 = its illustration (always works) plus photos at
-  // villas/<slug>/1.jpg, 2.jpg, 3.jpg — drop real photos in those folders and
-  // they slot into the loop automatically; missing files are skipped.
+  // Opens directly on villas/<slug>/<slug>-1.jpg, then cycles through
+  // <slug>-2.jpg and <slug>-3.jpg (slug = the villa's "slug" field, e.g.
+  // "sky-villa" → villas/sky-villa/sky-villa-1.jpg). There is no illustration
+  // fallback anymore, so until real photos are uploaded at those paths the
+  // card's image area will be blank.
   let sliderIntervals = [];
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
